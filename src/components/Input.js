@@ -3,19 +3,20 @@ import { View, TextInput } from 'react-native'
 import { styles } from '../utils/Styles' 
 
 export function Input(props) {
-  const { placeholder } = props
+  const { placeholder, onChangeText } = props
   const { input } = styles
   return (
     <View style={input}>
       <AntDesign
         name="search1"
         size={20}
-        color="#999"
+        color="hsl(0, 0%, 52%)"
         style={{ marginRight: 30 }}
       />
       <TextInput
+      onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor="#999"
+        placeholderTextColor="hsl(0, 0%, 52%)"
         style={{ flex: 1, paddingVertical: 8, fontSize: 16 }}
       />
     </View>

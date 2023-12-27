@@ -4,7 +4,7 @@ import { styles } from '../utils/Styles'
 import React, { useState } from 'react'
 
 export default function Dropdown(props) {
-  const { defaultText, listItems } = props
+  const { defaultText, listItems, onChange } = props
 
   const [selectedItem, setSelectedItem] = useState(defaultText)
   return (
@@ -18,7 +18,10 @@ export default function Dropdown(props) {
         itemStyle={{ backgroundColor: '#fff', color: 'black' }}
         mode="dropdown"
         selectedValue={selectedItem}
-        onValueChange={(itemValue, itemIndex) => setSelectedItem(itemValue)}
+        onValueChange={(itemValue, itemIndex) => {
+          setSelectedItem(itemValue)
+          onChange(itemValue)
+        }}
         style={{ flex: 1 }}
       >
         <Picker.Item label={defaultText} value={defaultText} />

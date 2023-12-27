@@ -4,7 +4,18 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function CountryCard(props) {
   const { country } = props
-  const { name, population, capital, region, image } = country
+  const {
+    name,
+    population,
+    capital,
+    region,
+    flags,
+    nativeName,
+    subregion,
+    topLevelDomain,
+    currencies,
+    languages
+  } = country
   const navigation = useNavigation()
 
   const navigateToCountryScreen = () => {
@@ -16,14 +27,14 @@ export default function CountryCard(props) {
         <Image
           style={styles.countryImage}
           source={{
-            uri: image
+            uri: flags['png']
           }}
         />
         <View style={styles.countryCardDetails}>
-          <Text style={styles.countryTitle}>{name}</Text>
+          <Text style={styles.countryTitle}>{name['official']}</Text>
           <View style={{ marginTop: 10 }} />
           <Text>
-            <Text style={{ fontWeight: 'bold' }}>Population:</Text> {population}
+            <Text style={{ fontWeight: 'bold' }}>Population:</Text> {population.toLocaleString('en-US', { style: 'decimal' })}
           </Text>
           <View style={{ marginTop: 5 }} />
           <Text>

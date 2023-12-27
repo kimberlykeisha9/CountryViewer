@@ -1,5 +1,4 @@
 import { StyleSheet, Platform } from 'react-native'
-import IconButton from '../components/IconButton'
 
 export const styles = StyleSheet.create({
   borderCountry: {
@@ -36,7 +35,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#ebeff2',
+    backgroundColor: 'hsl(0, 0%, 98%)',
     padding: 20,
     alignItems: 'flex-start',
     justifyContent: 'flex-start'

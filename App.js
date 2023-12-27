@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar'
-import { Text, View } from 'react-native'
+import React, { useState } from 'react'
 import HomeScreen from './src/screens/HomeScreen'
 import CountryScreen from './src/screens/CountryScreen'
 import { NavigationContainer } from '@react-navigation/native'
